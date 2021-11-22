@@ -35,15 +35,16 @@ module.exports = {
     }]
   },
   devServer: {
-    contentBase: './public',
-    writeToDisk: true,
+    devMiddleware: {
+      writeToDisk: true
+    },
     historyApiFallback: true
   },
   externals: {
     react: 'React',
     'react-dom': 'ReactDOM'
   },
-  Plugin: [
+  plugins: [
     new CleanWebpackPlugin()
   ]
 }

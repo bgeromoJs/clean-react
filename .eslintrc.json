@@ -18,6 +18,7 @@
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
     "@typescript-eslint/no-unused-vars": 0,
-    "@typescript-eslint/camelcase": "off"
+    "@typescript-eslint/camelcase": "off",
+    "react/prop-types": "off"
   }
 }
