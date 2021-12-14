@@ -10,7 +10,9 @@
     "test:watch": "npm test -- --watch",
     "test:staged": "npm test -- --findRelatedTests",
     "test:ci": "npm test -- --coverage",
-    "check": "npm-check -u -s"
+    "check": "npm-check -u -s",
+    "pre-commit": "lint-staged",
+    "pre-push": "npm run test:ci"
   },
   "devDependencies": {
     "@testing-library/react": "^12.1.2",
