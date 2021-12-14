@@ -9,7 +9,8 @@
     "test": "jest --passWithNoTests --no-cache --runInBand",
     "test:watch": "npm test -- --watch",
     "test:staged": "npm test -- --findRelatedTests",
-    "test:ci": "npm test -- --coverage"
+    "test:ci": "npm test -- --coverage",
+    "eslint:ci": "./node_modules/eslint/bin/eslint.js 'src/**'"
   },
   "devDependencies": {
     "@testing-library/react": "^12.1.2",
