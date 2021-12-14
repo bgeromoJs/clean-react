@@ -11,8 +11,7 @@
     "test:staged": "npm test -- --findRelatedTests",
     "test:ci": "npm test -- --coverage",
     "check": "npm-check -u -s",
-    "pre-commit": "./node_modules/lint-staged/bin/lint-staged.js",
-    "pre-push": "npm run test:ci"
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@testing-library/react": "^12.1.2",
