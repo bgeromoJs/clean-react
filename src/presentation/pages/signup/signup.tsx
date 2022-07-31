@@ -4,12 +4,14 @@ import { Footer, Input, LoginHeader, FormStatus } from '@/presentation/component
 import Context from '@/presentation/contexts/form/form-context'
 import { Link } from 'react-router-dom'
 import { Validation } from '@/presentation/protocols/validation'
+import { AddAccount } from '@/domain/usecases'
 
 type Props = {
-  validation?: Validation
+  validation: Validation
+  addAccount: AddAccount
 }
 
-const Singup: React.FC<Props> = ({ validation }: Props) => {
+const Singup: React.FC<Props> = ({ validation, addAccount }: Props) => {
   const [state, setState] = useState({
     isLoading: false,
     name: '',
@@ -36,6 +38,12 @@ const Singup: React.FC<Props> = ({ validation }: Props) => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
     event.preventDefault()
     setState({ ...state, isLoading: true })
+    await addAccount.add({
+      name: state.name,
+      email: state.email,
+      password: state.password,
+      passwordConfirmation: state.passwordConfirmation
+    })
   }
 
   return (
